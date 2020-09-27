@@ -1,0 +1,43 @@
+/* * {
+  outline: 1px solid black;
+} */
+
+.app {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 200vh;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+   -webkit-transition-delay: 9999s;
+   transition-delay: 9999s;
+}
+
+.btn {
+  font-size: 1em;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  margin: 1rem;
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  font-family: inherit;
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.shadow1 {
+  box-shadow: 0 0.2rem 1rem rgb(0, 0, 0, 0.2);
+}

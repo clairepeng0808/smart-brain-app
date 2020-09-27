@@ -1,0 +1,26 @@
+.navbar {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-items a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  margin: 16px;
+  cursor: pointer;
+}
+
+.nav-items a:hover {
+  color: #444;
+  text-decoration: none;
+}

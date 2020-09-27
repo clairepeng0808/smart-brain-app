@@ -1,0 +1,23 @@
+.btn-primary {
+  color: #444444;
+  background-color: #fee440;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: #fadb15;
+}
+
+.btn-dark {
+  color: #444444;
+  width: 80px;
+  background-color: transparent;
+}
+
+.btn-dark:hover,
+.btn-dark:active {
+  color: black;
+  background-color: transparent;
+}
+
+

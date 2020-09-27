@@ -1,0 +1,9 @@
+.logo {
+  padding: 20px;
+  border: 1;
+  width: 100%;
+}
+
+.shadow {
+  box-shadow: 0.2rem 0.2rem 1.2rem rgb(0, 0, 0, 0.2);
+}
