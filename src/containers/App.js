@@ -88,7 +88,7 @@ class App extends Component {
 
   onPictureSubmit = (event) => {
     this.setState({ imageUrl: this.state.input });
-    fetch('http://localhost:3000/imageurl',{
+    fetch('https://radiant-forest-01776.herokuapp.com/imageurl',{
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -102,7 +102,7 @@ class App extends Component {
                 data["outputs"][0]["data"]["regions"][0]["region_info"]["bounding_box"];
           this.setFaceBox(this.calculateFaceLoc(bounding_box));
 
-          fetch("http://localhost:3000/image", {
+          fetch("https://radiant-forest-01776.herokuapp.com/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

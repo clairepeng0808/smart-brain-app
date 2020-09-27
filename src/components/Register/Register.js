@@ -38,7 +38,7 @@ class Register extends React.Component {
     event.preventDefault();
     const { name, email, password } = this.state;
     const { loadUser,onRouteChange } = this.props;
-    const res = await fetch("http://localhost:3000/register", {
+    const res = await fetch("https://radiant-forest-01776.herokuapp.com/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
