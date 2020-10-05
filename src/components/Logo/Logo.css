@@ -1,7 +1,8 @@
 .logo {
-  padding: 20px;
+  padding: 10px;
   border: 1;
-  width: 100%;
+  width: auto;
+  height: 120px;
 }
 
 .shadow {

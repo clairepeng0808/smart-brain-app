@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.intro {
+  font-size: 18px;
+}
+
 .link-box {
   display: flex;
   justify-content: center;
@@ -18,18 +22,20 @@
   height: 100%;
   width: 50%;
   outline: none;
-  border: 2px solid #00bbf9;
+  border: 2px solid #64b3f4;
   border-radius: 4px;
   color: #444444;
   font-family: "Nunito", sans-serif;
 }
 
 .detect {
-  background-color: #00bbf9;
+  background-color: #64b3f4;
   color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .detect:hover {
-  background-color: #029acc;
+  background-color: #00bbf9;
   color: white;
 }

@@ -8,7 +8,6 @@ import FaceRecognition from "../components/FaceRecognition/FaceRecognition";
 import Signin from "../components/Signin/Signin";
 import Register from "../components/Register/Register";
 
-
 const particlesOptions = {
   particles: {
     number: {
@@ -88,36 +87,42 @@ class App extends Component {
 
   onPictureSubmit = (event) => {
     this.setState({ imageUrl: this.state.input });
-    fetch('https://radiant-forest-01776.herokuapp.com/imageurl',{
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              input: this.state.input
-            })
-          }) 
-      .then(res => res.json())
-      .then(data => {
+    fetch("https://radiant-forest-01776.herokuapp.com/imageurl", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        input: this.state.input,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
         if (data) {
           const bounding_box =
-                data["outputs"][0]["data"]["regions"][0]["region_info"]["bounding_box"];
+            data["outputs"][0]["data"]["regions"][0]["region_info"][
+              "bounding_box"
+            ];
           this.setFaceBox(this.calculateFaceLoc(bounding_box));
 
           fetch("https://radiant-forest-01776.herokuapp.com/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              id: this.state.loggedUser.id
-            })
+              id: this.state.loggedUser.id,
+            }),
           })
-            .then(res => res.json())
-            .then(data => {
-              this.setState(Object.assign(this.state.loggedUser,{ entries : data }))
-            })
+            .then((res) => res.json())
+            .then((data) => {
+              this.setState(
+                Object.assign(this.state.loggedUser, { entries: data })
+              );
+            });
+        } else {
+          console.log("Unable to read the picture.");
         }
       })
       .catch((err) => console.log(err));
-  }
-  
+  };
+
   onRouteChange = (page) => {
     if (page === "signin" || page === "register") {
       this.setState(initialState);
@@ -128,14 +133,14 @@ class App extends Component {
   };
 
   render() {
-    const { imageUrl, facebox, route, isSignedin,loggedUser } = this.state;
+    const { imageUrl, facebox, route, isSignedin, loggedUser } = this.state;
     return (
       <div className="app">
         <Particles className="particles" params={particlesOptions} />
         <Nav isSignedIn={isSignedin} onRouteChange={this.onRouteChange} />
         {route === "home" ? (
           <>
-            <Rank name={loggedUser.name} entries={loggedUser.entries}/>
+            <Rank name={loggedUser.name} entries={loggedUser.entries} />
             <ImageLinkForm
               onInputChange={this.onInputChange}
               onPictureSubmit={this.onPictureSubmit}
@@ -145,7 +150,10 @@ class App extends Component {
         ) : route === "signin" ? (
           <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
         ) : (
-          <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+          <Register
+            loadUser={this.loadUser}
+            onRouteChange={this.onRouteChange}
+          />
         )}
       </div>
     );

@@ -9,7 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 
 class SignIn extends React.Component {
   constructor() {
@@ -32,15 +32,18 @@ class SignIn extends React.Component {
   onSubmit = async (event) => {
     event.preventDefault();
     const { signInEmail, signInPassword } = this.state;
-    const { loadUser,onRouteChange } = this.props;
-    const res = await fetch("https://radiant-forest-01776.herokuapp.com/signin", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: signInEmail,
-        password: signInPassword,
-      }),
-    });
+    const { loadUser, onRouteChange } = this.props;
+    const res = await fetch(
+      "https://radiant-forest-01776.herokuapp.com/signin",
+      {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: signInEmail,
+          password: signInPassword,
+        }),
+      }
+    );
     const data = await res.json();
 
     if (res.status !== 200) {
@@ -57,7 +60,7 @@ class SignIn extends React.Component {
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline />
-        <ValidatorForm 
+        <ValidatorForm
           noValidate
           ref="form"
           method="POST"
@@ -69,10 +72,19 @@ class SignIn extends React.Component {
           }}
           onSubmit={this.onSubmit}
         >
-          <Avatar style={{ backgroundColor: "#00bbf9", margin: "8px auto" }}>
+          <Avatar
+            style={{
+              backgroundColor: "#64b3f4",
+              margin: "8px auto",
+            }}
+          >
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography
+            component="h1"
+            variant="h5"
+            style={{ fontFamily: "Nunito", fontWeight: "bold" }}
+          >
             Sign In
           </Typography>
           <div
@@ -90,8 +102,8 @@ class SignIn extends React.Component {
               label="Email Address"
               name="email"
               value={this.state.signInEmail}
-              validators={['required', 'isEmail']}
-              errorMessages={['this field is required', 'email is not valid']}
+              validators={["required", "isEmail"]}
+              errorMessages={["this field is required", "email is not valid"]}
               autoComplete="email"
               // autoFocus
             />
@@ -107,8 +119,8 @@ class SignIn extends React.Component {
               id="password"
               autoComplete="current-password"
               value={this.state.signInPassword}
-              validators={['required']}
-              errorMessages={['this field is required']}
+              validators={["required"]}
+              errorMessages={["this field is required"]}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -121,18 +133,19 @@ class SignIn extends React.Component {
               color="primary"
               style={{
                 margin: "24px 0 16px 0",
-                backgroundColor: "#00bbf9",
-                "&:hover": {
-                  backgroundColor: "#029acc",
-                },
+                backgroundColor: "#64b3f4",
+                fontFamily: "Nunito",
               }}
-              
             >
               Sign In
             </Button>
             <Grid container>
               <Grid item>
-                <Link style={{cursor:'pointer'}} variant="body2" onClick={() => onRouteChange("register")}>
+                <Link
+                  style={{ cursor: "pointer", fontFamily: "Nunito" }}
+                  variant="body2"
+                  onClick={() => onRouteChange("register")}
+                >
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

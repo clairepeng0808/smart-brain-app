@@ -10,7 +10,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 // import TextField from "@material-ui/core/TextField"
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 
 class Register extends React.Component {
   constructor() {
@@ -37,18 +37,21 @@ class Register extends React.Component {
   onSubmit = async (event) => {
     event.preventDefault();
     const { name, email, password } = this.state;
-    const { loadUser,onRouteChange } = this.props;
-    const res = await fetch("https://radiant-forest-01776.herokuapp.com/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        password: password,
-      }),
-    });
+    const { loadUser, onRouteChange } = this.props;
+    const res = await fetch(
+      "https://radiant-forest-01776.herokuapp.com/register",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          password: password,
+        }),
+      }
+    );
     const data = await res.json();
-    
+
     if (res.status !== 200) {
       this.setState({ error: data });
     } else {
@@ -73,10 +76,14 @@ class Register extends React.Component {
             alignItems: "center",
           }}
         >
-          <Avatar style={{ backgroundColor: "#00bbf9", margin: "8px auto" }}>
-            <LockOutlinedIcon />
+          <Avatar style={{ backgroundColor: "#64b3f4", margin: "8px auto" }}>
+            <LockOutlinedIcon style={{ color: "#fff" }} />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography
+            component="h1"
+            variant="h5"
+            style={{ fontFamily: "Nunito", fontWeight: "bold" }}
+          >
             Register
           </Typography>
           <div
@@ -97,8 +104,8 @@ class Register extends React.Component {
               autoFocus
               onChange={this.onNameChange}
               value={this.state.name}
-              validators={['required']}
-              errorMessages={['this field is required']}
+              validators={["required"]}
+              errorMessages={["this field is required"]}
             />
             <TextValidator
               required
@@ -112,8 +119,8 @@ class Register extends React.Component {
               autoFocus
               onChange={this.onEmailChange}
               value={this.state.email}
-              validators={['required', 'isEmail']}
-              errorMessages={['this field is required', 'email is not valid']}
+              validators={["required", "isEmail"]}
+              errorMessages={["this field is required", "email is not valid"]}
             />
             <TextValidator
               required
@@ -127,8 +134,8 @@ class Register extends React.Component {
               autoComplete="current-password"
               onChange={this.onPasswordChange}
               value={this.state.password}
-              validators={['required']}
-              errorMessages={['this field is required']}
+              validators={["required"]}
+              errorMessages={["this field is required"]}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -141,17 +148,19 @@ class Register extends React.Component {
               style={{
                 color: "#ffffff",
                 margin: "24px 0 16px 0",
-                backgroundColor: "#00bbf9",
-                "&:hover": {
-                  backgroundColor: "#029acc",
-                },
+                backgroundColor: "#64b3f4",
+                fontFamily: "Nunito",
               }}
             >
               Register
             </Button>
             <Grid container>
               <Grid item>
-                <Link style={{cursor:'pointer'}} variant="body2" onClick={() => onRouteChange("signin")}>
+                <Link
+                  style={{ cursor: "pointer", fontFamily: "Nunito" }}
+                  variant="body2"
+                  onClick={() => onRouteChange("signin")}
+                >
                   {"Already have an account? Sign In"}
                 </Link>
               </Grid>

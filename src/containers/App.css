@@ -6,15 +6,17 @@
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 200vh;
+  min-height: 150vh;
+  height: auto;
+  font-family: "Nunito", sans-serif;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-   -webkit-transition-delay: 9999s;
-   transition-delay: 9999s;
+  -webkit-transition-delay: 9999s;
+  transition-delay: 9999s;
 }
 
 .btn {
