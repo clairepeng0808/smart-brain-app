@@ -1,4 +1,4 @@
-<img src="./src/assets/banner.png"/>
+<div align='center'><img src="./src/assets/banner.png"/></div>
 
 # <div align='center'>💡 Smart Brain App</div>
 
