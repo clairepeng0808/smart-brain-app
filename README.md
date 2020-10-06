@@ -1,9 +1,11 @@
+<img src="./src/assets/logo-h.png"/>
+
 # <div align='center'>💡 Smart Brain App</div>
 
 <div align='center'>
 <p>
     <img src="https://www.herokucdn.com/deploy/button.svg"/><p>
-    <a href="https://smart-brain-claire.herokuapp.com/"><img src="https://img.shields.io/website?down_color=grey&down_message=offline&style=flat-square&up_color=brightgreen&up_message=online&url=https%3A%2F%2Fsmart-brain-claire.herokuapp.com%2F" /></a>
+    <a href="https://smart-brain-claire.herokuapp.com/"><img src="https://img.shields.io/website?down_color=grey&down_message=offline&style=flat-square&up_color=brightgreen&up_message=online&url=https%3A%2F%2Fsmart-brain-claire.herokuapp.com%2F"/></a>
     <img src="https://img.shields.io/npm/v/react?label=react&style=flat-square&color=9cf"/>
 
 </p>
