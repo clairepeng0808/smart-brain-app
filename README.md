@@ -33,7 +33,7 @@ Click here for Live demo</a></strong>
 
 ## ⚙️ Installation
 
-From your command line, first clone Talent Finder:
+From your command line, first clone the project:
 
 ### Clone this repository
 
