@@ -59,7 +59,9 @@ $ npm install
 $ npm run dev
 ```
 
-After installation, open [http://localhost:3000](http://localhost:3000) to view it in the browser. You can clone the [backend repo here](https://github.com/clairepeng0808/smart-brain-api)
+After installation, open [http://localhost:3000](http://localhost:3000), or if you are running both frontend and the backend, you can run it on [http://localhost:3001](http://localhost:3000) to view it in the browser.
+
+Clone the [backend repo here](https://github.com/clairepeng0808/smart-brain-api)
 
 ### Changed the API URLs
 
@@ -75,10 +77,10 @@ fetch("https://radiant-forest-01776.herokuapp.com/imageurl", {
     })
 ```
 
-If your backend is running on port 3001, changed your code to:
+If your backend is running on port 3000, changed your code to:
 
 ```zsh
-fetch("http://localhost:3001/imageurl", {
+fetch("http://localhost:3000/imageurl", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
