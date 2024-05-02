@@ -15,9 +15,6 @@ A face recognition app that uses the Clarifai API to detect and locate a human f
 A full-fledged app with user registration and login system. Frontend built with React.js, backend server and APIs with Node.js & Express.js, and PostgresSQL as database to keep track of how many entries a user has made. Deployed on Heroku.
 
 </p>
-<p><strong><a href="https://smart-brain-claire.herokuapp.com/">
-Click here for Live demo</a></strong>
-</p>
 <img src="./src/assets/demo.gif"/>
 </div>
 
